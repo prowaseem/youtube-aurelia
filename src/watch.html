@@ -1,0 +1,16 @@
+<template>
+  <div class="container-fluid">
+    <div class="col-sm-6 video-frame" if.bind="videoId">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="col-sm-6">
+      <h2>Related Videos</h2>
+      <div class="col-sm-2 thumbnail" repeat.for="item of items">
+        <a route-href="route: watch; params.bind: {id:item.id.videoId}">
+          <img src="${ item.snippet.thumbnails.default.url }" alt="${ item.snippet.channelTitle }">
+          <p>${ item.snippet.channelTitle }</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
