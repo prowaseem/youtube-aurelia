@@ -1,20 +1,22 @@
-import { Api } from './api';
+import { Api } from '../api/api';
+import {bindable} from "aurelia-framework";
 
-export class App{
+export class Home{
+
   constructor(){
     this.query = '';
     this.api = new Api(4);
     this.items = [];
-    this.showPage = false;
+    this.title = 'YouTube';
   }
 
   configureRouter(config, router){
-    this.router = router;
     config.title = 'Youtube Video Player';
     config.map([
       { route: ['', 'home'] , name: 'home', moduleId: './home', title: 'Welcome', nav: true},
       { route: 'watch/:id' , name: 'watch', moduleId: './watch'}
     ]);
+    this.router = router;
   }
 
   search(){

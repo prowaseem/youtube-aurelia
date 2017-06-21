@@ -1,4 +1,4 @@
-import {App} from '../../src/app';
+import {App} from '../../src/home/home';
 
 class RouterStub {
   configure(handler) {

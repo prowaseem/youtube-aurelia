@@ -9,5 +9,5 @@ Bluebird.config({ warnings: false });
 export async function configure(aurelia){
   aurelia.use.standardConfiguration().developmentLogging();
   await aurelia.start();
-  aurelia.setRoot('app');
+  aurelia.setRoot('home/home');
 }

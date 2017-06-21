@@ -96,7 +96,6 @@ let config = generateConfig(
     envProd({ /* devtool: '...' */ }),
 
   aurelia({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
-
   babel({ options: { /* uses settings from .babelrc */ } }),
   html(),
   css({ filename: 'styles.css', allChunks: true, sourceMap: false }),

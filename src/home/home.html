@@ -1,7 +1,9 @@
 <template>
-  <nav class="navbar navbar-default">
+  <require from="../nav-bar/nav-bar"></require>
+  <nav-bar title.bind="title"></nav-bar>
+  <!--<nav class="navbar navbar-default">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
+      &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -11,7 +13,7 @@
         </button>
         <a class="navbar-brand" href="#">${router.title}</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
+      &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <form class="navbar-form" submit.delegate="search()">
           <div class="form-group">
@@ -19,22 +21,22 @@
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+    </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
   </nav>
   <div class="container-fluid">
     <div class="col-sm-12">
       ${$parent}
-      <!--Show Videos here-->
+      &lt;!&ndash;Show Videos here&ndash;&gt;
       <h1 if.bind="showPage">Search Results</h1>
       <div class="col-sm-2 thumbnail" repeat.for="item of items">
         <a route-href="route: watch; params.bind: {id:item.id.videoId}">
           <img src="${ item.snippet.thumbnails.default.url }" alt="${ item.snippet.channelTitle }">
           <p>${ item.snippet.channelTitle }</p>
         </a>
-        <!--<iframe width="320" height="180" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen click.trigger="play(item)"></iframe>-->
+        &lt;!&ndash;<iframe width="320" height="180" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen click.trigger="play(item)"></iframe>&ndash;&gt;
       </div>
     </div>
   </div>
-  <router-view></router-view>
+  <router-view></router-view>-->
 </template>
