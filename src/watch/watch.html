@@ -1,4 +1,7 @@
 <template>
+  <require from="../value-converters/date-format"></require>
+  <require from="../value-converters/numbers-format"></require>
+
   <div class="container" id="watch_body">
     <div class="row">
       <div class="col-md-7 player">
@@ -6,10 +9,10 @@
         <div class="stats">
           <h2>${video.snippet.title}</h2>
           <p class="pull-left channel">${video.snippet.channelTitle}</p>
-          <p class="pull-right views">${video.statistics.viewCount} views</p>
+          <p class="pull-right views">${video.statistics.viewCount | numbers} views</p>
         </div>
         <div class="stats">
-          <strong class="date">Published on <date>${video.snippet.publishedAt}</date></strong>
+          <strong class="date">Published on <date>${video.snippet.publishedAt | dateFormat}</date></strong>
           <p class="description">${video.snippet.description}</p>
         </div>
       </div>
@@ -23,8 +26,7 @@
             </div>
             <div class="col-md-7 stats">
               <a route-href="route: watch; params.bind: {id:video.id.videoId}">${video.snippet.title}</a>
-              <p>Channel</p>
-              <span class="views">123456 views</span>
+              <p>${video.snippet.channelTitle}</p>
             </div>
           </div>
         </div>

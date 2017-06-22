@@ -4,7 +4,7 @@ import {bindable} from "aurelia-framework";
 export class Front{
   constructor(){
     this.term = '';
-    this.api = new Api();
+    this.api = new Api(50);
     this.videos = [];
     this.pageInfo = null;
     this.nextPageToken = null;
