@@ -2,6 +2,7 @@ import { Api } from '../api/api';
 import {bindable} from "aurelia-framework";
 
 export class Front{
+
   constructor(){
     this.term = '';
     this.api = new Api(50);

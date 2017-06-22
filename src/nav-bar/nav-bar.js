@@ -1,12 +1,22 @@
-import {bindable} from "aurelia-framework";
+import { bindable, inject} from "aurelia-framework";
+import { Api } from '../api/api';
+import { AppRouter } from 'aurelia-router';
 
+@inject(AppRouter)
 export class NavBar{
   @bindable title;
 
-  constructor(){
+  constructor(AppRouter){
+    this.router = AppRouter;
     this.term = '';
+    this.api = new Api(50);
+    this.videos = [];
   }
   search(){
-    console.log(this.term);
+    if(this.term !== ''){
+      this.api.searchVideos(this.term).then( data => {
+        console.log(data);
+      });
+    }
   }
 }

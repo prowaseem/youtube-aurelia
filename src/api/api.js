@@ -21,6 +21,15 @@ export class Api{
     }
     return httpClient.fetch('videos?' + params).then(response => response.json());
   }
+  searchVideos(term = ''){
+    let params = this.defaultFragment + '&part=snippet,id';
+    params += '&type=video-element';
+    params += '&regionCode=PK';
+    if(term !== ''){
+      params += '&q='+term;
+    }
+    return httpClient.fetch('search?' + params).then(response => response.json());
+  }
   getVideo(videoId){
     let params = this.defaultFragment + '&part=snippet,contentDetails,statistics';
     if(videoId !== ''){
