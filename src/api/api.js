@@ -9,17 +9,33 @@ export class Api{
     this.max = max;
     this.key = 'AIzaSyAVeGoDtDhi7UkTFwbUN8bdaysKDLb3PbU';
     this.defaultFragment = 'key='+this.key;
-    this.defaultFragment += '&type=video-element';
     this.defaultFragment += '&maxResults='+this.max;
   }
   getDefaultVideos(term = ''){
-    this.defaultFragment += '&part=snippet,contentDetails';
-    this.defaultFragment += '&chart=mostPopular';
-    this.defaultFragment += '&regionCode=PK';
+    let params = this.defaultFragment + '&part=snippet,contentDetails';
+    params += '&chart=mostPopular';
+    params += '&type=video-element';
+    params += '&regionCode=PK';
     if(term !== ''){
-      this.defaultFragment += '&q='+term;
+      params += '&q='+term;
     }
-    return httpClient.fetch('videos?' + this.defaultFragment).then(response => response.json());
+    return httpClient.fetch('videos?' + params).then(response => response.json());
+  }
+  getVideo(videoId){
+    let params = this.defaultFragment + '&part=snippet,contentDetails,statistics';
+    if(videoId !== ''){
+      params += '&id=' + videoId;
+    }
+    params += '&type=video-element';
+    return httpClient.fetch('videos?' + params).then(response => response.json());
+  }
+  getRelatedVideos(videoId){
+    let params = this.defaultFragment + '&part=snippet';
+    if(videoId !== ''){
+      params += '&relatedToVideoId=' + videoId + '&id=' + videoId;
+      params += '&type=video';
+    }
+    return httpClient.fetch('search?' + params).then(response => response.json());
   }
   /*constructor(results = 10){
     this.results = results;

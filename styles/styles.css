@@ -142,3 +142,103 @@ html,body{
   font-size: 0.8em;
   color: #767676;
 }
+#watch_body{
+  position: relative;
+  top: 2em;
+}
+#watch_body .player iframe{
+  /*width: 100%;*/
+}
+#watch_body .player .stats{
+  width: 100%;
+  background: #fff;
+  padding: 8px 10px;
+  font-family: 'Noto Sans', sans-serif;
+  min-height: 100px;
+  margin: 0.8em 0;
+}
+#watch_body .player .stats h2{
+  padding: 0;
+  margin: 0;
+  font-size: 1.4em;
+  width: 70%;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+#watch_body .player .stats span{
+  display: inline-block;
+}
+#watch_body .player .stats .views{
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Lato', sans-serif;
+  color: #167ac6;
+}
+#watch_body .player .stats .channel{
+  color: #167ac6;
+  font-weight: bold;
+}
+#watch_body .player .stats .date{
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+}
+#watch_body .player .stats .description{
+  padding: 0;
+  margin: 6px 0 0 0;
+}
+#watch_body .related-videos{
+  background: #fff;
+  padding: 10px 8px;
+}
+#watch_body .related-videos img{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+#watch_body .related-videos .thumbnail-img,
+#watch_body .related-videos .stats,
+#watch_body .related-videos .stats p{
+  margin: 0;
+  padding: 0;
+}
+#watch_body .related-videos .stats{
+  padding-left: 0.6em;
+  font-family: 'Noto Sans', sans-serif;
+}
+#watch_body .related-videos .stats a{
+  padding: 0;
+  margin: 0;
+  line-height: 1.3em;
+  position: relative;
+  white-space: normal;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  height: 2.6em;
+  font-size: 1.1em;
+  color: #167ac6;
+  font-weight: 500;
+  cursor: pointer;
+}
+#watch_body .related-videos .stats a:hover,
+#watch_body .related-videos .stats a:focus{
+  text-decoration-color: #167ac6;
+  text-decoration: underline;
+}
+#watch_body .related-videos .stats p{
+  font-size: 0.9em;
+}
+#watch_body .related-videos .stats span.views{
+  display: block;
+  font-size: 0.9em;
+}
+#watch_body .related-videos .video-box{
+  margin: 0 0 1em 0;
+}
+

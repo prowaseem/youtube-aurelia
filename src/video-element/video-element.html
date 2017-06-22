@@ -1,12 +1,12 @@
 <template bindable="video">
   <div class="col-md-2 video">
     <div class="thumbnail-img">
-      <a href="#">
-        <img src="${video.snippet.thumbnails.high.url}" alt="">
+      <a route-href="route: watch; params.bind: {id:video.id}">
+        <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
       </a>
     </div>
     <div class="content">
-      <a href="#">${video.snippet.title}</a>
+      <a route-href="route: watch; params.bind: {id:video.id}">${video.snippet.title}</a>
       <span class="channel">${video.snippet.channelTitle}</span>
     </div>
   </div>

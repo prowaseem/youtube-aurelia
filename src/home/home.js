@@ -13,7 +13,8 @@ export class Home{
   configureRouter(config, router){
     config.title = 'Youtube';
     config.map([
-      { route: [''] , name: 'front', moduleId: '../front/front', title: 'Home', nav: true}
+      { route: [''] , name: 'front', moduleId: '../front/front', title: 'Home'},
+      { route: ['watch/:id'] , name: 'watch', moduleId: '../watch/watch'}
     ]);
     this.router = router;
   }
