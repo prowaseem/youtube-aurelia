@@ -113,16 +113,20 @@ html,body{
 .video-list .video .thumbnail-img{
   margin-bottom: 4px;
 }
+.video-list .video .content{
+  overflow: hidden;
+}
 .video-list .video .content a{
   line-height: 1.3em;
-  overflow: hidden;
   position: relative;
-  text-overflow: ellipsis;
   white-space: normal;
-  word-wrap: break-word;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+  overflow: hidden;
   text-decoration: none;
-  max-height: 2.6em;
-  font-size: 100%;
+  height: 2.6em;
+  font-size: 0.9em;
   color: #167ac6;
   font-weight: 500;
   cursor: pointer;
@@ -132,4 +136,9 @@ html,body{
 .video-list .video .content a:focus{
   text-decoration-color: #167ac6;
   text-decoration: underline;
+}
+.video-list .video .content span.channel{
+  display: block;
+  font-size: 0.8em;
+  color: #767676;
 }

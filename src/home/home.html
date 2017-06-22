@@ -1,11 +1,8 @@
 <template>
   <require from="../nav-bar/nav-bar"></require>
-  <require from="../video-list/video-list"></require>
 
   <nav-bar title.bind="title"></nav-bar>
   <div id="main">
-    <div class="container" id="main_body">
-      <video-list></video-list>
-    </div>
+    <router-view></router-view>
   </div>
 </template>

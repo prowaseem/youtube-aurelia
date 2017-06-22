@@ -1,12 +1,13 @@
-<template>
+<template bindable="video">
   <div class="col-md-2 video">
     <div class="thumbnail-img">
       <a href="#">
-        <img src="https://i.ytimg.com/vi/RD9Pgq6AM48/hqdefault.jpg?sqp=-oaymwEWCMQBEG5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLBNhNUqACVOU6vf9-Z5zpwNe4glAg" alt="">
+        <img src="${video.snippet.thumbnails.high.url}" alt="">
       </a>
     </div>
     <div class="content">
-      <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, quis.</a>
+      <a href="#">${video.snippet.title}</a>
+      <span class="channel">${video.snippet.channelTitle}</span>
     </div>
   </div>
 </template>

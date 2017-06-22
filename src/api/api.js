@@ -5,15 +5,31 @@ let httpClient = new HttpClient().configure( x => {
 });
 
 export class Api{
-  constructor(results = 10){
+  constructor(max = 12){
+    this.max = max;
+    this.key = 'AIzaSyAVeGoDtDhi7UkTFwbUN8bdaysKDLb3PbU';
+    this.defaultFragment = 'key='+this.key;
+    this.defaultFragment += '&type=video-element';
+    this.defaultFragment += '&maxResults='+this.max;
+  }
+  getDefaultVideos(term = ''){
+    this.defaultFragment += '&part=snippet,contentDetails';
+    this.defaultFragment += '&chart=mostPopular';
+    this.defaultFragment += '&regionCode=PK';
+    if(term !== ''){
+      this.defaultFragment += '&q='+term;
+    }
+    return httpClient.fetch('videos?' + this.defaultFragment).then(response => response.json());
+  }
+  /*constructor(results = 10){
     this.results = results;
     this.defaultFragment = 'key=AIzaSyAVeGoDtDhi7UkTFwbUN8bdaysKDLb3PbU';
     this.defaultFragment += '&type=video-element';
     this.defaultFragment += '&maxResults=' + this.results;
     this.defaultFragment += '&part=id,snippet';
     this.defaultFragment += '&fields=items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle,nextPageToken';
-  }
-  getVideos(term){
+  }*/
+  /*getVideos(term){
     let param = this.defaultFragment + '&q=' + term;
     return httpClient.fetch('search?'+param)
       .then(response => response.json());
@@ -24,5 +40,5 @@ export class Api{
     param += videoId + '&type=video-element';
     return httpClient.fetch('search?'+param)
       .then(response => response.json());
-  }
+  }*/
 }

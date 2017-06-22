@@ -1,7 +1,7 @@
-<template>
+<template bindable="header">
   <require from="../video-element/video-element"></require>
   <div class="video-list row">
-    <h2>Recommended</h2>
-    <video-element repeat.for="item of [1,2,3,4,5,6]"></video-element>
+    <h2 if.bind="header">${header}</h2>
+    <video-element repeat.for="video of videos" video.two-way="video"></video-element>
   </div>
 </template>
