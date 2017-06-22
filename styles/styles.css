@@ -2,6 +2,8 @@ html,body{
   margin: 0;
   padding: 0;
   font-size: 100%;
+  font-family: 'Lato', sans-serif;
+  background-color: #f1f1f1;
 }
 .splash{
   position: absolute;
@@ -18,15 +20,30 @@ html,body{
 .navbar-default{
   background-color: rgba(255, 255, 255, .15) !important;
   border-color: #ddd !important;
+  margin: 0 !important;
 }
 .search-form{
-  margin-left: 1.5em !important;
+  margin-left: 10em !important;
 }
 .search-form input.form-control{
   width: 40em;
   -webkit-border-radius:0;
   -moz-border-radius:0;
   border-radius:0;
+}
+.search-form input.form-control:active,
+.search-form input.form-control:hover,
+.search-form input.form-control:visited,
+.search-form input.form-control:focus{
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.search-form input.form-control:hover{
+  border-color: #ccc;
+}
+.search-form input.form-control:focus{
+  border-color: #337ab7;
 }
 .search-form button.btn{
   height: 34px;
@@ -36,6 +53,12 @@ html,body{
   border-color: #d3d3d3;
   background: #f8f8f8;
   color: #333;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  position: relative;
+  left: -4px;
+  border-left: none;
 }
 .search-form button.btn:hover,
 .search-form button.btn:active{
@@ -45,5 +68,68 @@ html,body{
   box-shadow: none;
 }
 .search-form button.btn:active{
-  border: none;
+  border-color: #c6c6c6;
+  background: #e9e9e9;
+  box-shadow: inset 0 1px 0 #ddd;
+}
+#main{
+  background: #f1f1f1;
+}
+#main_body{
+  background: #fff;
+  padding:10px 8px;
+  position: relative;
+  top: 1.5em;
+}
+.video-list .video,
+.video-list .video .thumbnail-img img,
+.video-list .video .content a{
+  margin: 0;
+  padding: 0;
+}
+.video-list .video{
+  margin: 4px 6px;
+  width: 15.6%;
+}
+.video-list.row{
+  margin: 0 0 1em 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #ddd;
+}
+.video-list h2{
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: 500;
+  line-height: 1.3em;
+  word-wrap: normal;
+  color: #333;
+  margin: 4px 6px;
+  font-family: 'Noto Sans', sans-serif;
+}
+.video-list .video .thumbnail-img img{
+  width: 100%;
+}
+.video-list .video .thumbnail-img{
+  margin-bottom: 4px;
+}
+.video-list .video .content a{
+  line-height: 1.3em;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  text-decoration: none;
+  max-height: 2.6em;
+  font-size: 100%;
+  color: #167ac6;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
+}
+.video-list .video .content a:hover,
+.video-list .video .content a:focus{
+  text-decoration-color: #167ac6;
+  text-decoration: underline;
 }

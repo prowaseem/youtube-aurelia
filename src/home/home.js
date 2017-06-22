@@ -11,10 +11,9 @@ export class Home{
   }
 
   configureRouter(config, router){
-    config.title = 'Youtube Video Player';
+    config.title = 'Youtube';
     config.map([
-      { route: ['', 'home'] , name: 'home', moduleId: './home', title: 'Welcome', nav: true},
-      { route: 'watch/:id' , name: 'watch', moduleId: './watch'}
+      { route: [''] , name: 'front', moduleId: './front', title: 'Home', nav: true}
     ]);
     this.router = router;
   }

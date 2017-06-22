@@ -8,7 +8,7 @@ export class Api{
   constructor(results = 10){
     this.results = results;
     this.defaultFragment = 'key=AIzaSyAVeGoDtDhi7UkTFwbUN8bdaysKDLb3PbU';
-    this.defaultFragment += '&type=video';
+    this.defaultFragment += '&type=video-element';
     this.defaultFragment += '&maxResults=' + this.results;
     this.defaultFragment += '&part=id,snippet';
     this.defaultFragment += '&fields=items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle,nextPageToken';
@@ -21,7 +21,7 @@ export class Api{
   getRelatedVideos(videoId){
     let param = 'key=AIzaSyAVeGoDtDhi7UkTFwbUN8bdaysKDLb3PbU&';
     param += 'part=snippet&relatedToVideoId=';
-    param += videoId + '&type=video';
+    param += videoId + '&type=video-element';
     return httpClient.fetch('search?'+param)
       .then(response => response.json());
   }
