@@ -29,7 +29,7 @@ const title = 'Youtube App'
 const baseUrl = '/'
 const rootDir = path.resolve()
 const srcDir = path.resolve('src')
-const outDir = path.resolve('dist')
+const outDir = path.resolve('dist/public')
 
 const coreBundles = {
   bootstrap: [
