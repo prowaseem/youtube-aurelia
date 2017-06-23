@@ -27,6 +27,7 @@
             <div class="col-md-7 stats">
               <a route-href="route: watch; params.bind: {id:video.id.videoId}">${video.snippet.title}</a>
               <p>${video.snippet.channelTitle}</p>
+              <span class="views">${video.snippet.publishedAt | dateFormat}</span>
             </div>
           </div>
         </div>
