@@ -155,7 +155,7 @@ html,body{
   padding: 8px 10px;
   font-family: 'Noto Sans', sans-serif;
   min-height: 90px;
-  height: auto;
+  overflow: hidden;
   margin: 0.8em 0;
 }
 #watch_body .player .stats h2{

@@ -1,4 +1,5 @@
 import { HttpClient } from 'aurelia-fetch-client';
+import  google  from '../config/google';
 
 let httpClient = new HttpClient().configure( x => {
   x.withBaseUrl("https://www.googleapis.com/youtube/v3/")
@@ -7,7 +8,7 @@ let httpClient = new HttpClient().configure( x => {
 export class Api{
   constructor(max = 12){
     this.max = max;
-    this.key = 'AIzaSyAVeGoDtDhi7UkTFwbUN8bdaysKDLb3PbU';
+    this.key = google.api.key;
     this.defaultFragment = 'key='+this.key;
     this.defaultFragment += '&maxResults='+this.max;
   }
