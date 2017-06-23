@@ -8,6 +8,7 @@ export class Home{
 
   configureRouter(config, router){
     config.title = 'Youtube';
+    config.options.pushState = true;
     config.map([
       { route: [''] , name: 'front', moduleId: '../front/front', title: 'Home'},
       { route: ['watch/:id'] , name: 'watch', moduleId: '../watch/watch'},
