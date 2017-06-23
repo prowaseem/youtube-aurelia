@@ -1,6 +1,6 @@
 <template>
   <require from="../video-list/video-list"></require>
   <div class="container" id="main_body">
-    <video-list videos.bind="videos" header="Trending"></video-list>
+    <video-list videos.bind="videos" header.bind="header"></video-list>
   </div>
 </template>

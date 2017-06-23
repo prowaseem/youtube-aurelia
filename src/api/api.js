@@ -24,7 +24,6 @@ export class Api{
   searchVideos(term = ''){
     let params = this.defaultFragment + '&part=snippet,id';
     params += '&type=video-element';
-    params += '&regionCode=PK';
     if(term !== ''){
       params += '&q='+term;
     }

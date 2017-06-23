@@ -1,12 +1,8 @@
-import { Api } from '../api/api';
 import {bindable} from "aurelia-framework";
 
 export class Home{
 
   constructor(){
-    this.query = '';
-    this.api = new Api(4);
-    this.items = [];
     this.title = 'YouTube';
   }
 
@@ -14,18 +10,9 @@ export class Home{
     config.title = 'Youtube';
     config.map([
       { route: [''] , name: 'front', moduleId: '../front/front', title: 'Home'},
-      { route: ['watch/:id'] , name: 'watch', moduleId: '../watch/watch'}
+      { route: ['watch/:id'] , name: 'watch', moduleId: '../watch/watch'},
+      { route: ['search/:term?'] , name: 'search', moduleId: '../search/search'}
     ]);
     this.router = router;
   }
-
-  search(){
-    this.api.getVideos(this.query).then( data => {
-      this.items = data.items;
-      this.showPage = true;
-    }).catch( e => {
-      alert("Error on fetching videos");
-    });
-  }
-
 }

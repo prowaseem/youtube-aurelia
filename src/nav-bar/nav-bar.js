@@ -14,9 +14,7 @@ export class NavBar{
   }
   search(){
     if(this.term !== ''){
-      this.api.searchVideos(this.term).then( data => {
-        console.log(data);
-      });
+      this.router.navigateToRoute('search', {term: this.term});
     }
   }
 }

@@ -10,6 +10,7 @@ export class Front{
     this.pageInfo = null;
     this.nextPageToken = null;
     this.regionCode = null;
+    this.header = 'Trending';
   }
   activate(params, routeConfig){
     this.api.getDefaultVideos().then( data => {

@@ -1,12 +1,12 @@
 <template bindable="video">
-  <div class="col-md-2 video">
+  <div class="col-md-2 video" if.bind="!video.id.channelId">
     <div class="thumbnail-img">
-      <a route-href="route: watch; params.bind: {id:video.id}">
+      <a route-href="route: watch; params.bind: {id: video.id.videoId ? video.id.videoId : video.id}">
         <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
       </a>
     </div>
     <div class="content">
-      <a route-href="route: watch; params.bind: {id:video.id}">${video.snippet.title}</a>
+      <a route-href="route: watch; params.bind: {id: video.id.videoId ? video.id.videoId : video.id}">${video.snippet.title}</a>
       <span class="channel">${video.snippet.channelTitle}</span>
     </div>
   </div>
